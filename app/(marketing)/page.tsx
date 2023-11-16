@@ -27,16 +27,16 @@ const MarketingPage = () => {
           <Medal className="mr-2 h-6 w-6" />
           No 1 task management
         </div>
-        <h1 className="mb-6 text-center text-3xl text-neutral-800 md:text-6xl">
+        <h1 className="mb-6 text-center text-3xl text-foreground md:text-6xl">
           ZenTask helps team move
         </h1>
-        <div className="rounded-md bg-gradient-to-r from-fuchsia-600 to-pink-600 p-4 px-4 text-3xl text-white shadow-sm md:text-6xl">
+        <div className="rounded-md bg-gradient-to-r from-fuchsia-600 to-pink-600 p-4 px-4 text-3xl text-zinc-50 shadow-sm md:text-6xl">
           work forward.
         </div>
       </div>
       <div
         className={cn(
-          "mx-auto mt-4 max-w-xs text-center text-sm text-neutral-400 md:max-w-2xl md:text-xl",
+          "mx-auto mt-4 max-w-xs text-center text-sm text-muted-foreground md:max-w-2xl md:text-xl",
           textFont.className,
         )}
       >
