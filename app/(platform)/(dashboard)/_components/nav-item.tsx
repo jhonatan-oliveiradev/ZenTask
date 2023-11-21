@@ -10,6 +10,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export type Organization = {
   id: string;
@@ -58,7 +59,7 @@ export const NavItem = ({
   ];
 
   const onClick = (href: string) => {
-    router.push;
+    router.push(href);
   };
 
   return (
@@ -87,6 +88,7 @@ export const NavItem = ({
       <AccordionContent className="pt-1 text-foreground">
         {routes.map((route) => (
           <Button
+            key={route.href}
             size="sm"
             onClick={() => onClick(route.href)}
             className={cn(
@@ -94,7 +96,6 @@ export const NavItem = ({
               pathname === route.href && "bg-muted-foreground/10 text-sky-700",
             )}
             variant="ghost"
-            key={route.href}
           >
             {route.icon}
             {route.label}
@@ -102,5 +103,16 @@ export const NavItem = ({
         ))}
       </AccordionContent>
     </AccordionItem>
+  );
+};
+
+NavItem.Skeleton = function SkeletonNavItem() {
+  return (
+    <div className="flex items-center gap-x-2">
+      <div className="relative h-10 w-10 shrink-0">
+        <Skeleton className="absolute h-full w-full" />
+      </div>
+      <Skeleton className="h-10 w-full" />
+    </div>
   );
 };
